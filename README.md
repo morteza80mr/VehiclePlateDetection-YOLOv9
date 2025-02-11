@@ -50,6 +50,41 @@ cd YOLOv9-PlateDetection
 ```
 ---
 
+## 📸 Running Inference on an Image
+
+If you're looking to run the model on an image and see the detection results, follow these steps:
+
+### 1. Install Required Libraries
+Make sure you have the necessary libraries installed:
+```bash
+pip install ultralytics torch opencv-python
+```
+
+### 2. Download the Pre-trained Weights
+Use gdown to download the `best.pt` file:
+```bash
+!gdown 19gU4-AWEg4DdXvxY80sClcjyCABT0bg_
+```
+
+### 3. Run the Model on Your Image
+Upload your test image to the files section (for example, if using Google Colab).
+Update the image path in your script to point to your image file.
+
+Here's an example usage snippet:
+
+```python
+# Example usage:
+# Replace the image path with the path to your test image.
+image_path = "/content/Plate-Sample.jpg"
+
+# If you are training the model from the beginning, use this path.
+# infer_and_visualize(image_path, model_path='/content/plate_detection/yolov9_plate_model/weights/best.pt')
+
+# If you just load the best weights, use this path.
+infer_and_visualize(image_path, model_path='/content/best.pt')
+```
+---
+
 ## 📊 **Performance Metrics**  
 The model is evaluated on the test set using **Mean Average Precision (mAP)**:  
 
